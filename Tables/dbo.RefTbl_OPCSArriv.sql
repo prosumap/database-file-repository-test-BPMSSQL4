@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[RefTbl_OPCSArriv]
+(
+[PO_ID] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[ARRIVAL_NO] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[EXP_IN_HOUSE_DATE] [datetime] NULL,
+[EXP_SHIP_DATE] [datetime] NULL,
+[LAST_MOD_DATE] [datetime] NULL,
+[LAST_MOD_TIME] [datetime] NULL,
+[ALLOCATION_APPROVED] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[TRANSPORTATION_MODE] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CrOn] [datetime] NULL CONSTRAINT [DF_RefTbl_OPCSArriv_CrOn] DEFAULT (getdate())
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[RefTbl_OPCSArriv] ADD CONSTRAINT [RefTbl_OPCSArriv$PrimaryKey] PRIMARY KEY CLUSTERED  ([PO_ID]) ON [PRIMARY]
+GO
